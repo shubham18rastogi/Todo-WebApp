@@ -4,3 +4,15 @@
   Hello <strong>{{ name }}...</strong> How you doin?? You can manage your todo's
   <a routerLink="/todos">here</a>
 </div>
+
+<div class="container">
+  Click here to get a customised welcome message
+  <button (click)="getWelcomeMessage()" class="btn btn-success">
+    Get Welcome Message
+  </button>
+</div>
+
+<div class="container" *ngIf="serviceMessage">
+  <h2>Your customised welcome message</h2>
+  {{ serviceMessage }}
+</div>

@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
 import { ListTodoComponent } from './list-todo/list-todo.component';
 import { MenuComponent } from './menu/menu.component';
@@ -21,14 +22,10 @@ import { LogoutComponent } from './logout/logout.component';
     ListTodoComponent,
     MenuComponent,
     FooterComponent,
-    LogoutComponent
+    LogoutComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
