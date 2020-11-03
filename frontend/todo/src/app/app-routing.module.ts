@@ -10,7 +10,7 @@ import { RouteGaurdService } from './service/route-gaurd.service';
 import { TodoComponent } from './todo/todo.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: WelcomeComponent },
   { path: 'login', component: LoginComponent },
   {
     path: 'welcome/:name',

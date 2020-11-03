@@ -22,7 +22,7 @@ export class WelcomeComponent implements OnInit {
 
   getWelcomeMessage() {
     this.welcomeDataService
-      .executeHelloWorldPathVariableBeanService('shbhm')
+      .executeHelloWorldPathVariableBeanService('this.name')
       .subscribe(
         (response) => this.handleSuccessResponse(response),
         (error) => this.handleErrorResponse(error)
@@ -33,6 +33,6 @@ export class WelcomeComponent implements OnInit {
     this.serviceMessage = response.message;
   }
   handleErrorResponse(error) {
-    this.serviceMessage = error.message;
+    this.serviceMessage = 'error ' + error.message;
   }
 }
