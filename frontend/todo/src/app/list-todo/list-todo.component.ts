@@ -33,8 +33,8 @@ export class ListTodoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.refreshTodos();
     this.username = this.authService.getAuthenticatedUser();
+    this.refreshTodos();
   }
 
   refreshTodos() {
