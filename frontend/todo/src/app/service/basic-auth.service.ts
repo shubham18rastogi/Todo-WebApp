@@ -9,25 +9,17 @@ import { API_URL } from './../app.constants';
 export class BasicAuthService {
   constructor(private http: HttpClient) {}
 
-  executeAuthService(username, password) {
-    console.log('Bean Service');
-
-    let basicAuthHeaderString =
-      'Basic ' + window.btoa(username + ':' + password);
-
-    console.log(basicAuthHeaderString);
-    let headers = new HttpHeaders({
-      Authorization: basicAuthHeaderString,
-    });
+  executeJWTAuthService(username, password) {
+    
 
     return this.http
-      .get<AuthBean>(`${API_URL}/basicauth`, {
-        headers,
+      .post<any>(`${API_URL}/authenticate`, {
+        username, password
       })
       .pipe(
         map((data) => {
           sessionStorage.setItem('authenticatedUser', username);
-          sessionStorage.setItem('token', basicAuthHeaderString);
+          sessionStorage.setItem('token', `Bearer ${data.token}`);
           return data;
         })
       );

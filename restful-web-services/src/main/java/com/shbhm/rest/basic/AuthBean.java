@@ -1,4 +1,4 @@
-package com.shbhm.rest.webservices.restfulwebservices.basic;
+package com.shbhm.rest.basic;
 
 public class AuthBean {
     private String message;

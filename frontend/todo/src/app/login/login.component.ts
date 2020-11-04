@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   handleBasicAuthLogin() {
     console.log(this.username, this.password);
     this.basicAuthService
-      .executeAuthService(this.username, this.password)
+      .executeJWTAuthService(this.username, this.password)
       .subscribe(
         (data) => {
           console.log(data);

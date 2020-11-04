@@ -1,4 +1,4 @@
-package com.shbhm.rest.webservices.restfulwebservices.basic;
+package com.shbhm.rest.basic;
 
 import org.springframework.web.bind.annotation.*;
 
