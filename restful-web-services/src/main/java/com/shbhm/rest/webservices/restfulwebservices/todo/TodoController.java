@@ -22,13 +22,13 @@ public class TodoController {
     }
 
     @GetMapping(path = "/users/{username}/todos/{id}")
-    public Todo getTodo(@PathVariable String username, @PathVariable long id){
+    public Todo getTodo(@PathVariable String username, @PathVariable Long id){
         Todo todo =  todoHardCodedService.findById(id);
         return todo;
     }
 
     @PutMapping(path = "/users/{username}/todos/{id}")
-    public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable long id, @RequestBody Todo todo){
+    public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable Long id, @RequestBody Todo todo){
         Todo todoUpdated =  todoHardCodedService.saveTodo(todo);
         return new ResponseEntity<>(todoUpdated, HttpStatus.OK);
     }
@@ -42,7 +42,7 @@ public class TodoController {
     }
 
     @DeleteMapping(path = "/users/{username}/todos/{id}")
-    public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id){
+    public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable Long id){
         Todo todo =  todoHardCodedService.deleteById(id);
         if(todo!=null)
             return ResponseEntity.noContent().build();
